@@ -39,6 +39,9 @@ Buttons
 		class:bigButton hasFlares
 		shown
 		lit
+	*bigButton
+		name:Big button
+		desc:It's big button
 Resources
 	*pen|pens
 		name:Pen|Pens
@@ -47,5 +50,10 @@ Buildings
 	*hand
 		name:Hand|Hands
 		desc:Just hands to make pens.
+		cost:15 pens
+		on tick:yield 0.1 pens
+	*transistor|transistors
+		name:Transistor|Transistors
+		desc:A transistor is a semiconductor device used to amplify or switch electrical signals and power. It is one of the basic building blocks of modern electronics.<q>P-type plastic, N-type ink</q>
 		cost:15 pens
 		on tick:yield 0.1 pens
