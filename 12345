@@ -61,3 +61,25 @@ Buildings
 		cost:1100 pens
 		on tick:yield 8 pens
 		req:100 pens
+Upgrades
+	*hand1
+		name:Advanced build
+		desc:Multiplies hand and mouse production by 2 times
+		passive:multiply yield of hand by 2
+		passive:multiply yield of 123abc by 2
+		cost:100 pens
+		req:(hand)>=1
+	*hand2
+		name:Advanced build 2
+		desc:Multiplies hand and mouse production by 2 times
+		passive:multiply yield of hand by 2
+		passive:multiply yield of 123abc by 2
+		cost:500 pens
+		req:(hand)>=1
+	*hand3
+		name:Ambidextrous
+		desc:Multiplies hand and mouse production by 2 times
+		passive:multiply yield of hand by 2
+		passive:multiply yield of 123abc by 2
+		cost:10000 pens
+		req:(hand)>=10
