@@ -39,9 +39,6 @@ Buttons
 		class:bigButton hasFlares
 		shown
 		lit
-	*bigButton
-		name:Big button
-		desc:It's big button
 Resources
 	*pen|pens
 		name:Pen|Pens
