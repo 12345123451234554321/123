@@ -31,7 +31,7 @@ Layout
     					costs:hide
     					names:hide
 Buttons
-	*bigButton
+	*BigButton
 		name:Big button
 		desc:It's big button
 		on click:yield 1 pen
