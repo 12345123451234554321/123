@@ -54,3 +54,10 @@ Buildings
 		desc:A transistor is a semiconductor device used to amplify or switch electrical signals and power. It is one of the basic building blocks of modern electronics.<q>P-type plastic, N-type ink</q>
 		cost:100 pens
 		on tick:yield 1 pen
+		req:15 pens
+	*farm
+		name:Farm|Farms
+		desc:
+		cost:1100 pens
+		on tick:yield 8 pens
+		req:100 pens
