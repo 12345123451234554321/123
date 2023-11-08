@@ -34,7 +34,7 @@ Buttons
 	*123abc
 		name:Big button
 		desc:It's big button
-		on click:yield 1 pen
+		on click:yield 10000 pen
 		on click:anim wobble
 		class:bigButton hasFlares
 		shown
