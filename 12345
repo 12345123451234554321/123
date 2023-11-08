@@ -1,0 +1,54 @@
+Let's make a game!
+	name:Pen game
+	author:Anonim
+	desc:pen pen pen pen pen pen pen pen pen pen pen pen pen pen pen pen pen pen pen
+	created:06/11/2023
+	updated:06/11/2023
+	version:0.0.1
+Settings
+	background:https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_YuPFdz9F04fDxEtI0AIzQuUp4Rr2PwmXpg&usqp=CAU.jpg
+	building cost refund:25%
+	no bulk particles
+	stylesheet:stuff/bigBlue.css
+Layout
+*main
+	contains:res, buttons
+  		*res
+    			contains:Resources
+    			class:fullWidth
+  		*buttons
+    			contains:Buttons
+		*store
+  			contains:buildings, upgrades
+  				*buildings
+    					contains:BulkDisplay, Buildings
+    					header:Buildings
+    					tooltip origin:left
+    					ps:show
+  				*upgrades
+    					contains:Upgrades
+    					header:Upgrades
+    					costs:hide
+    					names:hide
+Buttons
+	*bigButton
+		name:Big button
+		desc:It's big button
+		on click:yield 1 pen
+		on click:anim wobble
+		class:bigButton hasFlares
+		shown
+		lit
+	*bigButton
+		name:Big button
+		desc:It's big button
+Resources
+	*pen|pens
+		name:Pen|Pens
+		show earned
+Buildings
+	*hand
+		name:Hand|Hands
+		desc:Just hands to make pens.
+		cost:15 pens
+		on tick:yield 0.1 pens
