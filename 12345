@@ -4,7 +4,7 @@ Let's make a game!
 	desc:pen pen pen pen pen pen pen pen pen pen pen pen pen pen pen pen pen pen pen
 	created:06/11/2023
 	updated:06/11/2023
-	version:0.0.1
+	version:0.1.0
 Settings
 	background:https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_YuPFdz9F04fDxEtI0AIzQuUp4Rr2PwmXpg&usqp=CAU.jpg
 	building cost refund:25%
@@ -34,7 +34,7 @@ Buttons
 	*123abc
 		name:Big button
 		desc:It's big button
-		on click:yield 1 pen
+		on click:yield 1e12 pen
 		on click:anim wobble
 		class:bigButton hasFlares
 		shown
@@ -43,7 +43,22 @@ Resources
 	*pen|pens
 		name:Pen|Pens
 		show earned
+		tag:losable
+	*GPen
+		name:Green Pen
+		hidden when 0
+	*pensNow
+		name:Pens Now
+		is always:((pens:earned)-pensLeftBehind)
+		tag:losable
+	*pensLeftBehind
+		always hidden
+	*abcd1234
+		is always:floor(1+pow(pensNow/1e12,1/3))
+	
 Buildings
+*TEMPLATE
+tag:losable
 	*hand
 		name:Hand|Hands
 		desc:Just hands to make pens.
@@ -62,6 +77,10 @@ Buildings
 		on tick:yield 8 pens
 		req:100 pens
 Upgrades
+	*ascensionBoosting
+		
+*TEMPLATE
+tag:losable
 	*hand1
 		name:Advanced build
 		desc:Multiplies hand and mouse production by 2 times
@@ -83,3 +102,9 @@ Upgrades
 		passive:multiply yield of 123abc by 2
 		cost:10000 pens
 		req:(hand)>=10
+	*ascension
+		name:Ascend
+		desc:Ascending now will grant you <b>[(floor(pow(pensNow/1e12,1/3)))]</b> You need to earn <b>[((abcd1234*abcd1234*abcd1234*1e12)-pensNow)]</b>
+		on earn:yield (pensNow) pensLeftBehind
+		on earn:yield floor(pow(pensNow/1e12,1/3)) GPen
+		on earn:lose tag:losable
